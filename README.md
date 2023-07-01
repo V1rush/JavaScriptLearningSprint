@@ -7,7 +7,7 @@ In this challenge, I will enhance my JavaScript skills and knowledge. Every day,
 
 ## Overview
 - **Duration:** 20 days
-- **Objective:** Improve JavaScript proficiency through daily learning and practice, in additon gain the ability to apply complex algorithms to solve problems with JavaScript which will be tested on Codeforces or Leetcode.
+- **Objective:** Improve JavaScript proficiency through daily learning and practice, in additon to gain the ability to apply complex algorithms to solve problems with JavaScript which will be tested on Codeforces or Leetcode.
 
 
 ## Courses
