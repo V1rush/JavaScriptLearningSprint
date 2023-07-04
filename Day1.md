@@ -11,7 +11,9 @@ In my JavaScript learning journey, Day 1 was filled with important concepts. Thi
 
 <*> Operators : I acquired comprehension of diverse operators within JavaScript. These encompass arithmetic operators for mathematical calculations, comparison operators for value comparisons, and logical operators for combining conditions.
 
-## Code Examples (DOM)
+## Code Examples
+```javascript
+(DOM)
 //Accessing by ID
 console.log(document.getElementById("id")); // retrieves a single element with the specified ID.
 console.log(document.querySelector("#id")); //retrieve the first element with the ID.
@@ -32,7 +34,10 @@ console.log(document.querySelector("#p1").textContent); // outputs the text of t
 console.log(document.querySelectorAll(".square").length); // outputs the number of squares were in the tic tac toe example.
 console.log(document.querySelector("h2").textContent); // outputs the text contained in the first element with the tagname of h2.
 
-##Code Examples (Values and Data Type)
+//Applications 2
+document.querySelector("#p1-name").textContent = "Bashar"; // will change the text content of the first element with the ID of "p1-name".
+
+(Values and Data Type)
 let val = "String"
 let age = 10;
 let ok = true;
@@ -43,9 +48,53 @@ typeof (oprand) // returns a string containing the type of that oprand.
 
 console.log(typeof val); // this will output: "String".
 console.log(typeof age); // this will output: "Number".
+console.log(typeof ok); // this will output: "boolean".
+console.log(typeof nullval); // this will output: "null".
+console.log(typeof undefval); // this will output: "undefined". although it should be null but it's a special case.
 
+(Strings!)
+let str = "Hello World"; //declaring and initializing the variable str with the value "Hello World".
+//some of its methods!
+console.log(str.length); // outputs the size of the string
+console.log(str.indexOf("Wo")); // outputs the first index of a substring match. else it returns -1;
+console.log(~("Palestine").indexOf("Pal") ? "Yes" : "No"); // this is another example of using indexOf() to either check if a substring exists or no.
+console.log(str.lastIndexOf("o")) // it will output the idex of the last appearance from left to right of the given substring.
+console.log(str.includes("No")); // this will either return true when the givern substring exists in the original strings else it will return false;
+console.log(str.toUpperCase()); //this will output the same string but with all characters being capital letters.
 
+```
 
+## Gaza Sky Geeks Coding Exercises!
+### [Exercise: Compound Assignment With Augmented Multiplication](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/basic-javascript/compound-assignment-with-augmented-multiplication)
+```javascript
+
+let a = 5;
+let b = 12;
+let c = 4.6;
+
+// Only change code below this line
+a *= 5;
+b *= 3;
+c *= 10;
+```
+
+### [Exercise: Concatenating Strings with the Plus Equals Operator](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/basic-javascript/concatenating-strings-with-the-plus-equals-operator)
+
+```javascript
+let myStr ="This is the first sentence. ";
+myStr += "This is the second sentence.";
+```
+
+### [Exercise: Use Bracket Notation to Find the Nth-to-Last Character in a String](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/basic-javascript/use-bracket-notation-to-find-the-nth-to-last-character-in-a-string)
+
+```javascript
+// Setup
+const lastName = "Lovelace";
+
+// Only change code below this line
+const secondToLastLetterOfLastName = lastName[(lastName.length)-2]; // Change this line
+
+```
 
 
 
