@@ -11,9 +11,50 @@ In my JavaScript learning journey, Day 1 was filled with important concepts. Thi
 
 <*> Operators : I acquired comprehension of diverse operators within JavaScript. These encompass arithmetic operators for mathematical calculations, comparison operators for value comparisons, and logical operators for combining conditions.
 
-## Code Examples
+## Code Examples (DOM)
+//Accessing by ID
+console.log(document.getElementById("id")); // retrieves a single element with the specified ID.
+console.log(document.querySelector("#id")); //retrieve the first element with the ID.
+console.log(document.querySelector("#id")); //returns a collection of elements that match a given ID.
 
-//getting an element by its ID.
+//Accessing by ClassName.
+console.log(document.getElementsByClassName("classname"));
+console.log(document.querySelectorAll(".classname"));
+console.log(document.querySelector(".classname"));
+
+//Accessing by Tag name.
+console.log(document.getElementsByTagName("tagname"));
+console.log(document.querySelectorAll("tagname"));
+console.log(document.querySelector("tagname"));
+
+//Applications 1
+console.log(document.querySelector("#p1").textContent); // outputs the text of the first element with the id of p1
+console.log(document.querySelectorAll(".square").length); // outputs the number of squares were in the tic tac toe example.
+console.log(document.querySelector("h2").textContent); // outputs the text contained in the first element with the tagname of h2.
+
+##Code Examples (Values and Data Type)
+let val = "String"
+let age = 10;
+let ok = true;
+let nullval = null;
+let undefval;
+
+typeof (oprand) // returns a string containing the type of that oprand.
+
+console.log(typeof val); // this will output: "String".
+console.log(typeof age); // this will output: "Number".
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
