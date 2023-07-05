@@ -55,14 +55,124 @@ return a*a; // outputs a value and then returns a number of value n*n.
 
 ```
 
-### <<Scopes in JavaScript >>
+### << Scopes in JavaScript >>
 
 Just as any programming language JavaScript has the concept of variable scopes, scopes actually define the limits where some variables are accessable.
 JavaScript has two types of scopes: local and global. local scopes are defined within functions or specific blocks, which are enclosed by `{}`, while global scopes are not limited to any specific local area.
 
 In ES6, the `let` keyword was introduced as an alternative to `var` for declaring variables. some of the key diffferences are covered as follows:
 
+- Block scope: as mentioned the block scope is anything that lies inside two curly brackets `{}`, variables declared using the `let` keyword possess block scope, limiting their accessibility to the specific block of code where they are defined (enclosed within curly braces `{}`). anyhow, variables declared with `var` have either local scope or global scope.
+- Redeclaration and Reassignment: Variables declared using the `let` keyword allow for reassignment to a new value, but they cannot be redecorated within the same block scope. though on the other hand, variables declared with `var` can be both reassigned and redecorated within the same scope.
 
+### Code examples of << Scopes in JavaScript >>
+
+```javascript
+
+let str = "Global";
+
+const newFunc = () => {
+let str = "Local";
+console.log(str); // outputs "Local"
+}
+console.log(str); //outputs "Global"
+
+////////
+
+{
+let first = 83;
+var second = 81;
+console.log(first); // outputs 83
+console.log(second) // outputs 81
+}
+console.log(first); // error
+console.log(second) // outputs 81
+
+```
+
+### a code of the quiz project will be provided once completed.
+
+## Coding Exercises provided by the GSG Team
+
+### [Excercise: Return a Value from a Function with Return](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/basic-javascript/return-a-value-from-a-function-with-return)
+
+```javascript
+const timesFive = (arg) => arg*5;
+```
+
+### [Exercise: Global Scope and Functions](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/basic-javascript/global-scope-and-functions)
+
+```javascript
+// Declare the myGlobal variable below this line
+const myGlobal = 10;
+
+function fun1() {
+  // Assign 5 to oopsGlobal here
+oopsGlobal = 5;
+}
+
+// Only change code above this line
+
+function fun2() {
+  let output = "";
+  if (typeof myGlobal != "undefined") {
+    output += "myGlobal: " + myGlobal;
+  }
+  if (typeof oopsGlobal != "undefined") {
+    output += " oopsGlobal: " + oopsGlobal;
+  }
+  console.log(output);
+}
+```
+
+### [Exercise: Local Scope and Functions](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/basic-javascript/local-scope-and-functions)
+
+```javascript
+function myLocalScope() {
+  // Only change code below this line
+let myVar;
+  console.log('inside myLocalScope', myVar);
+}
+myLocalScope();
+
+// Run and check the console
+// myVar is not defined outside of myLocalScope
+console.log('outside myLocalScope', myVar);
+```
+
+### [Exercise: Global vs. Local Scope in Functions](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/basic-javascript/global-vs--local-scope-in-functions)
+
+```javascript
+// Setup
+const outerWear = "T-Shirt";
+
+function myOutfit() {
+  // Only change code below this line
+  const outerWear = "sweater";
+  // Only change code above this line
+  return outerWear;
+}
+
+myOutfit();
+```
+### [Exercise: Stand in Line](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/basic-javascript/stand-in-line)
+
+```javascript
+function nextInLine(arr, item) {
+  // Only change code below this line
+  arr.push(item);
+  // Only change code above this line
+  return arr.shift();
+}
+
+// Setup
+let testArr = [1, 2, 3, 4, 5];
+
+// Display code
+console.log("Before: " + JSON.stringify(testArr));
+console.log(nextInLine(testArr, 6));
+console.log("After: " + JSON.stringify(testArr));
+```
 
 
 
