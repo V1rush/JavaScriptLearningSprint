@@ -494,3 +494,96 @@ embed[type="application/pdf"][src="about:blank"] { filter: invert(100%) contrast
 
 ### [Build a Rick & Morty characters list](https://github.com/orjwan-alrajaby/gsg-expressjs-backend-training-2023/blob/main/learning-sprint-1/week1-day5-task/task.md)
 
+### JavaScript File | main.js
+```javascript
+    let charactersArray = [];
+    
+    function displayCharacters(charactersArray) {
+      let charactersList = document.getElementById("charactersList");
+      let o = 0;
+      charactersArray.forEach(iterator=> {
+        if(o===50)
+          return;
+        else 
+          ++o;
+        let li = document.createElement('li');
+        let img = document.createElement("img");
+        let name = document.createElement("p");
+        let location = document.createElement("p");
+        let species = document.createElement("p");
+        let gender = document.createElement("p");
+        img.src = iterator.image;
+        name.innerText = iterator.name;
+        location.innerText = iterator.location.name;
+        species.innerText = iterator.species;
+        gender.innerText = iterator.gender;
+        li.appendChild(img);
+        li.appendChild(name);
+        li.appendChild(location);
+        li.appendChild(species);
+        li.appendChild(gender);
+        charactersList.appendChild(li);
+      });
+    }
+    const filter= (charactersArray) => {
+        const arr = charactersArray.filter(iterator=> iterator.status ==="Alive" || iterator.status === "unknown");
+        return arr;
+    }
+    
+    fetch("https://rickandmortyapi.com/api/character")
+    .then(response=>response.json())
+    .then(data=>{
+      charactersArray=data.results;
+      displayCharacters(filter(charactersArray));
+    })
+    .catch(err=> {
+        console.log(err);
+    });
+```
+
+### HTML file | index.html
+```html
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Alive Character List</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <ul id="charactersList"></ul>
+    <script src="main.js"></script>
+</body>
+
+</html>
+```
+
+### CSS file | style.css
+```css
+#charactersList {
+    list-style-type: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-gap: 20px;
+  }
+  
+  #charactersList li {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  #charactersList li img {
+    width: 100%;
+    border-radius: 5px;
+    margin-bottom: 10px;
+  }
+  
+  #charactersList li p {
+    margin: 0;
+    font-size: 14px;
+  }
+```
+
