@@ -60,7 +60,7 @@ const powerOf = base => exp=> Math.pow(base,exp);
 ### Problem #3 Solution
 ```javascript
 const compose = ...functions => (val)=>{
-for(let o =0; o < functions.length;o++)
+for(let o = functions.length-1; o >= 0;o--)
   val = functions[o](val);
 return val
 }
