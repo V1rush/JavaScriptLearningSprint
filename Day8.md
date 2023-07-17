@@ -116,6 +116,7 @@ const asyncTasks = [task1, task2, task3, task4, task5];
 
 const executeInSequenceWithCBs = (tasks, callback) => {}
 
+## My Solution:
 ```javascript
 const executeInSequenceWithCBs = (tasks, callback) => {
 const msgs = [];
@@ -229,29 +230,9 @@ const executeInSequenceWithPromises = (apis) => {}
 
 ## My solution:
 ```javascript
-const apis = [
-    {
-        apiName: "products",
-        apiUrl: "https://dummyjson.com/products",
-    },
-    {
-        apiName: "users",
-        apiUrl: "https://dummyjson.com/users",
-    },
-    {
-        apiName: "posts",
-        apiUrl: "https://dummyjson.com/posts",
-    },
-    {
-        apiName: "comments",
-        apiUrl: "https://dummyjson.com/comments",
-    }
-]
-
-//modify and write your code here
 const executeInSequenceWithPromises = (apis) => {
     const promisesArray = apis.map(async iterator => {
-        const response = await fetch(api.apiUrl);
+        const response = await fetch(iterator.apiUrl);
         const data = await response.json();
         return {
             apiName: iterator.apiName,
