@@ -154,7 +154,7 @@ Question 4 Solution:
 ```js
 const compareObjects(x,y) {
   if(!((typeof x === 'object') && (typeof y === 'object)))
-        return [input1, input2];
+        return [x, y];
   if(Object.keys(x).length !== Object.keys(y).length)
     return false;
   let keysArray = Object.keys(x);
