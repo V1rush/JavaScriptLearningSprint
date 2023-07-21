@@ -4,7 +4,7 @@ will be filled later
 
 [Problems' Statements](https://github.com/orjwan-alrajaby/gsg-expressjs-backend-training-2023/blob/main/learning-sprint-1/week3-day2-tasks/tasks.md)
 
-**Q1 Solution**
+### Q1 Solution:
 ```ts
 interface HWType {
   text : string;
@@ -52,22 +52,22 @@ return obj;
 
 ```
 
-**Q2 Solution**
+### Q2 Solution:
 
-A) undefined, undefined, undefined
-B) 1, undefined, ReferenceError
-C) 1, ReferenceError, ReferenceError
-`D) 1, ReferenceError` => that's the right answer.
+- A) undefined, undefined, undefined
+- B) 1, undefined, ReferenceError
+- C) 1, ReferenceError, ReferenceError
+- `D) 1, ReferenceError` => that's the right answer.
 
-**Q3 Solution**
+### Q3 Solution:
 
-`A) undefined, ReferenceError` => that's the answer.
-B) 1, undefined, ReferenceError
-C)undefined, undefined, ReferenceError
-D) 1, ReferenceError
+- `A) undefined, ReferenceError` => that's the answer.
+- B) 1, undefined, ReferenceError
+- C)undefined, undefined, ReferenceError
+- D) 1, ReferenceError
 
-**Q4 Solution**
-A) [ 36, 100, 45 ] | [ 1, 2, 3 ] | [ 36, 2, 3 ]
-B) [ 36, 100, 45 ] | [1, 2, 3 ] | [ 36, 100, 45 ]
-`C) [ 36, 100, 45 ] | [ 1, 2, 3 ] | [ 1,100, 45 ]`
-D) [ 36, 100, 45 ] | [ 1, 2, 3 ] | [ 1, 2, 3 ]
+### Q4 Solution:
+- A) [ 36, 100, 45 ] | [ 1, 2, 3 ] | [ 36, 2, 3 ]
+- B) [ 36, 100, 45 ] | [1, 2, 3 ] | [ 36, 100, 45 ]
+- `C) [ 36, 100, 45 ] | [ 1, 2, 3 ] | [ 1,100, 45 ]`
+- D) [ 36, 100, 45 ] | [ 1, 2, 3 ] | [ 1, 2, 3 ]
