@@ -1,3 +1,6 @@
+Day 12: << Scope & Function Expressions, Advanced Scope & Closure >>
+The Scope & Function Expressions, Advanced Scope & Closure README offers a concise introduction to the fundamental concepts of scope and function expressions in JavaScript. These lessons delve into the implementation of scopes and function expressions, highlighting their significance and core applications. The primary objective is to ensure a strong comprehension of scope and function expressions in JavaScript, encompassing practical usage and their impact on code structure.
+
 ## < Exercises provided by the GSG Team >
 [Problems' Statements](https://github.com/orjwan-alrajaby/gsg-expressjs-backend-training-2023/blob/main/learning-sprint-1/week3-day2-tasks/tasks.md)
 
@@ -93,3 +96,30 @@ function outer2() {
 outer2(); // Output: 20
 ```
 So now x is defined within the `outer2` function, and its value is `20` but we also do have an `x` that has been declared and assigend earlier in the `outer1` function, of value `10`, but the thing here is that when `outer2` is invoked it does not make a new variable cause it was declared with `var` not with `const` or `let` so it just modifies it to 20 instead which is the output.
+
+## < Advanced scope: >
+
+[Problems' Statements](https://github.com/orjwan-alrajaby/gsg-expressjs-backend-training-2023/blob/main/learning-sprint-1/week3-day4-tasks/tasks.md)
+
+### Q1 Solution: 
+
+```js
+for (let i = 0; i < 5; i++) {
+    setTimeout(function() {
+      console.log("value of [i] is: ", i);
+    }, 100);
+}
+```
+
+### Q2 Solution: 
+```js
+let array = [];
+for (let i = 0; i < 5; i++) {
+   array.push(i);
+   console.log("Current array is: ", array)
+}
+```
+
+
+
+
