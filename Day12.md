@@ -1,5 +1,68 @@
-Day 12: << Scope & Function Expressions, Advanced Scope & Closure >>
+Day 12: << Function Expressions, Advanced Scope & Closure >>
 The Scope & Function Expressions, Advanced Scope & Closure README offers a concise introduction to the fundamental concepts of scope and function expressions in JavaScript. These lessons delve into the implementation of scopes and function expressions, highlighting their significance and core applications. The primary objective is to ensure a strong comprehension of scope and function expressions in JavaScript, encompassing practical usage and their impact on code structure.
+
+## << Function Expressions >> 
+It seems like we can assign functions to variables and access them through the names of these variables.
+
+*Question* why should I used named function expressions?
+
+- It's a reliable function name-reference (for recursive functions).
+	      -* if's an eventhandler and it needs to reference itself to unbind itself
+        -* it's useful if you wanna access any property of that function's object=> length, name.
+- More debuggable stack trace.
+	    *- if you use a name for your function express, it will show up in the stack trace.
+- More self-documenting code (code readablility).
+	    *- having anoynymous name will force you to read the function's body to know what it does, but if it had name, its name will give an indication of its job 
+
+Basically a function expression can be any statement in the code that has a `function` keyword within the statement but not in the beggining of that statement.
+Also function expressions are not hoisted, meaning you can never access them before assigning them to a variable during run time.
+so if we are to try it out in code:
+
+```js
+theory(); // this will throw an ReferenceError.
+const theory = function funcExpression(){console.log("Hi")}
+```
+
+## << Advanced Scoping >> 
+When we think about lexical scope we think about something that is fixed at auther time (compile time) and it's predictable and not affected by run-time conditions
+Dynamic Scope is the opposite. meaning that they can affect the scoping. 
+
+Dynamically scoped function in my POV is more like a function that takes its resources from an outsided scope which it relies on.(it's more theoratical than a real thing)
+
+
+IIFE (Immediately Invoked Function Expression): it's a design pattern in JavaScript that allows us to create a new function scope to encapsulate variables nd avoid polluting the global scope with variables that are used only within the function. 
+
+Coding Example:
+```js
+const val = "global"
+function newFunc() {
+console.log(val);
+};
+
+this can be written as this:
+(function newFunc() {
+console.log(val);
+};)();
+```
+### < Hoisting > 
+To run a code in JavaScript you've to go through 2 phases, creation phase and excution phase, in creation phase you're taking all function definitons and variable declaration and saving them up in memory in preparation for the next phase which is excuting based on these information.
+also scope planning happens to let javascript know what are the scopes in that code
+hoisting is bascially the idea of moving the declaration of a variable and functions definitions to the top of their own scope.
+`const` & `let` does not work that way, for example:
+```js
+console.log(x); // this will give a referenceError.
+let x = 10;
+console.log(y);// this will output: undefined
+var y =10;
+func(); // this will output 10.
+function func() {
+console.log(x);
+}
+```
+
+## << Closure >>
+Closure is when a function "rememebrs" its lexical scope even when the function is excuted outside the lexical scope.
+
 
 ## < Exercises provided by the GSG Team >
 [Problems' Statements](https://github.com/orjwan-alrajaby/gsg-expressjs-backend-training-2023/blob/main/learning-sprint-1/week3-day2-tasks/tasks.md)
@@ -110,15 +173,32 @@ for (let i = 0; i < 5; i++) {
     }, 100);
 }
 ```
+using `var` would be wrong if you want to get the permuation of 0 to 4 because `var` is a function scoped declaration keyword, on the other hand though, let's make a use of that for loops create a new block each iteration, so we can assign a new `i` to each block which is actually happening in the code I provided.
+to be more precise though, when the loop is over and all `setTimeout` Functions are called and waiting on the event queue, they dont really have the value of `i` but more than a reference to it, and guess what, since `i` is the same across all the blocks that means when the functions are excuted they will reference the value of 5.
 
 ### Q2 Solution: 
 ```js
 let array = [];
 for (let i = 0; i < 5; i++) {
    array.push(i);
-   console.log("Current array is: ", array)
 }
+   console.log("Current array is: ", array);
 ```
+we're just declaring an array and using a loop to access the array and mutate it to add 5 elements to it in each loop to make a permuation, then we just output it.
+
+### Q3 Solution:
+```js
+let functions = [];
+
+for (let i = 0; i < 5; i++) {
+  functions.push(() => {
+    console.log("Current value of i is:", i);
+  });
+}
+
+functions.forEach((func) => func());
+```
+the same as Quesiton 1. `let` in each loop creates a new block for each arrow function which will be accessed when called.
 
 
 
