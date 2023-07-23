@@ -218,7 +218,7 @@ console.log(val.getcnt()); // 0
 val.incrementcnt();
 console.log(val.getcnt()); // 1
 ```
-Q1 Solution: 
+Q2 Solution: 
 
 Implemented using DP in JS (poorly but acceptable lol)
 ```js
