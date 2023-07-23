@@ -200,6 +200,40 @@ functions.forEach((func) => func());
 ```
 the same as Quesiton 1. `let` in each loop creates a new block for each arrow function which will be accessed when called.
 
+## < Closure >
+Q1 Solution:
+```js
+function privateCounter() {
+	let cnt = 0;
+	function incrementcnt() {
+		cnt++;
+	}
+	function getcnt() {
+	return cnt;
+}
+return ({incrementcnt : incrementcnt, getcnt : getcnt}); 
+}
+const val = privateCounter();
+console.log(val.getcnt()); // 0
+val.incrementcnt();
+console.log(val.getcnt()); // 1
+```
+Q1 Solution: 
 
-
+Implemented using DP in JS (poorly but acceptable lol)
+```js
+const mx = 1e8;
+let dp = new Array(mx);
+dp[1] = 1;
+dp[0] = 0;
+function fib(val) {
+    if(val<=0)
+        return 0;
+    if(dp[val] !== undefined)
+        return dp[val]
+    return dp[val] = fib(val-1)+fib(val-2);
+    
+}
+console.log(fib(7));
+```
 
